@@ -1,0 +1,23 @@
+
+Download pymetamap from githum
+https://github.com/AnthonyMRios/pymetamap
+
+Execute following command in root folder of above project to install the package:
+python3 setup.py install
+
+
+https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/additional-tools/DataFileBuilder.html
+
+Metamap download link - https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/run-locally/MainDownload.html
+Metamap 2018 supports MacOS
+
+https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/documentation/Installation.html
+
+Cheatsheet:
+cd /Users/vijaymi/Studies/CS-598-DL4Health/Project/135-Disease-Inference-Method/public_mm
+Start Part-of-speech tagger server.
+./bin/skrmedpostctl start
+./bin/skrmedpostctl stop
+
+List of semantic types in Metamap:
+https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemanticTypes_2018AB.txt
