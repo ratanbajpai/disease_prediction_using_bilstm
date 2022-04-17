@@ -14,7 +14,7 @@ METAMAP_PATH = os.environ.get("METAMAP_PATH")
 
 # Data is not stored as part of project because of its restricted use.
 DATA_BASE_PATH = "../data/"
-NOTES_FILE = 'Project.csv'
+NOTES_FILE = 'filtered_notes.csv'
 DIAG_FILE = 'DIAGNOSES_ICD.csv'
 DIAG_DICT_FILE = 'D_ICD_DIAGNOSES.csv'
 SYMPTOMS_FILE = "Symptoms.txt"
@@ -27,7 +27,7 @@ IRRELEVANT_SECTIONS = [
 ]
 
 timestamp = datetime.now().strftime('%d-%H-%M-%S')
-LAST_RECORD_DONE = 2880
+LAST_RECORD_DONE = 0
 record_processed = 0
 semaphore_object = Semaphore(1)
 
@@ -125,7 +125,7 @@ def process_chunk(notes_data):
     symptoms_list = []
     number_of_rec = notes_data.shape[0]
     for index in range(number_of_rec):
-        symptoms = process_notes(notes_data.iloc[index, 10])
+        symptoms = process_notes(notes_data.iloc[index, 11])
         print(f"Symptoms : {symptoms}")
         symptoms_list.append(symptoms)
 
@@ -134,9 +134,9 @@ def process_chunk(notes_data):
 
 def main():
     print("Pre-processing starting now!")
-    data_iterator = pd.read_csv(DATA_BASE_PATH + NOTES_FILE, chunksize=10)
+    data_iterator = pd.read_csv(DATA_BASE_PATH + NOTES_FILE, chunksize=100)
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         executor.map(process_chunk, data_iterator)
 
 

@@ -21,3 +21,6 @@ Start Part-of-speech tagger server.
 
 List of semantic types in Metamap:
 https://lhncbc.nlm.nih.gov/ii/tools/MetaMap/Docs/SemanticTypes_2018AB.txt
+
+
+export METAMAP_PATH=/home/vijaymi/data/metamap/public_mm
