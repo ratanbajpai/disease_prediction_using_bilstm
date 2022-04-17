@@ -138,7 +138,7 @@ def process_chunk(notes_data):
 
 def main():
     print("Pre-processing starting now!")
-    data_iterator = pd.read_csv(DATA_BASE_PATH + NOTES_FILE, chunksize=100)
+    data_iterator = pd.read_csv(DATA_BASE_PATH + NOTES_FILE, chunksize=10)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         executor.map(process_chunk, data_iterator)
