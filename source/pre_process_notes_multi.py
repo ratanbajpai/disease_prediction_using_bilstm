@@ -1,13 +1,16 @@
-import concurrent
+import concurrent.futures
+import logging
 from threading import Semaphore
 import os
-
-import torch
 import pandas as pd
 from pymetamap import MetaMap
 from nltk.sentiment import SentimentAnalyzer
 from nltk.sentiment.util import *
 from datetime import datetime
+
+FORMAT = '%(asctime)s %(clientip)-15s %(user)-8s %(message)s'
+logging.basicConfig(format=FORMAT)
+logger = logging.getLogger('pre_process_nodes_multi')
 
 # Set METAMAP_PATH variable to the folder where Metamap is installed.
 METAMAP_PATH = os.environ.get("METAMAP_PATH")
@@ -82,7 +85,8 @@ def extract_symptoms_using_metamap(text):
                     symptoms.append(concept.preferred_name)
         return symptoms
     except Exception as e:
-        print(f"Exception occurred {e}")
+        print(f"Exception occurred {e} ")
+        logger.error(f"Exception occurred {e} ")
         return symptoms
 
 
