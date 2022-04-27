@@ -110,9 +110,10 @@ def save_to_file(notes_data, symptoms_list):
             for idx, symptoms in enumerate(symptoms_list):
                 print(f"notes_data : {notes_data.iloc[idx, 0]}")
                 writer.write(str(notes_data.iloc[idx, 0]) + "," + str(notes_data.iloc[idx, 1])
-                             + "," + str(notes_data.iloc[idx, 2]) + ",")
+                             + "," + str(notes_data.iloc[idx, 2])
+                             + "," + str(notes_data.iloc[idx, 3]) + ",")
                 symptom_str = "|".join(symptoms)
-                symptom_str.replace(",", " ")
+                symptom_str = symptom_str.replace(",", " ")
                 writer.write(symptom_str)
                 writer.write("\n")
 
