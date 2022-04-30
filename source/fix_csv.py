@@ -50,4 +50,4 @@ def main(filename):
 
 
 if __name__ == "__main__":
-    main("../data/symptoms-batch5.csv")
+    main("../data/symptoms-final.csv")
