@@ -122,7 +122,7 @@ This notebook implements the BiLSTM model which will take TF-IDF based symptom r
 
 This notebook is almost same as notebook 05_bilstm_training_v2 with minor changes to use LSTM instead of BiLSTM model as an ablation to original experiment. We added a separate notebook to be able to present all the charts etc. associated with experiment.
 
-## Pre-trained Models
+## 4.0 Pre-trained Models
 
 models folders contains following pre-trained models:
 
@@ -132,7 +132,7 @@ models folders contains following pre-trained models:
 - symptom_symptom_100_v2.0.model : Symptom to Symptom (Word2Vec embeddings based symptom representation ) trained BiLSTM model for top 100 diseases
 
 
-## Results
+## 5.0 Results
 
 Our model achieves the following performance on :
 
@@ -169,7 +169,7 @@ Our model achieves the following performance on :
 ![img.png](.images/100_macro_auc_perf.png)
 
 
-## Contributing
+## 6.0 Contributing
 
 MIT License
 
