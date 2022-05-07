@@ -134,11 +134,9 @@ models folders contains following pre-trained models:
 
 ## 5.0 Results
 
-Our model achieves the following performance on :
+### 5.1 Top 100 Disease classification
 
-### Top 100 Disease classification
-
-#### Performance of different models for 100 most-common diseases (micro average)
+#### 5.1.1 Performance of different models for 100 most-common diseases (micro average)
 
 | Model name         | Mi-Precision  | Mi-Recall | Mi-F1 | Mi-AUC
 | ------------------ |---------------- | -------------- |---------------|--------------|
@@ -146,25 +144,25 @@ Our model achieves the following performance on :
 | BiLSTM + SymVec (Word2Vec)   |     46%        |      60%       |    52%     |       77%    |
 | BiLSTM + SymVec (TF-IDF + Word2Vec)   |     46%        |      61%       |    53%     |       78%    |
 
-#### Micro F1 Score for Top 100 diseases for all 3 models for different weighted means
+#### 5.1.2 Micro F1 Score for Top 100 diseases for all 3 models for different weighted means
 ![img.png](.images/100_micro_F1_perf.png)
 
-#### Micro AUC Score for Top 100 diseases for all 3 models for different weighted means
+#### 5.1.3 Micro AUC Score for Top 100 diseases for all 3 models for different weighted means
 
 ![img.png](.images/100_micro_auc_perf.png)
 
-#### Performance of different models for 100 most-common diseases (micro average)
+#### 5.1.4 Performance of different models for 100 most-common diseases (macro average)
 
-| Model name         | Mi-Precision  | Mi-Recall | Mi-F1 | Mi-AUC
+| Model name         | Ma-Precision  | Ma-Recall | Ma-F1 | Ma-AUC
 | ------------------ |---------------- | -------------- |---------------|--------------|
 | BiLSTM + SymVec (TF-IDF)   |     36%        |      44%       |    36%     |       68%    |
 | BiLSTM + SymVec (Word2Vec)   |     37%        |      46%       |    39%     |       70%    |
 | BiLSTM + SymVec (TF-IDF + Word2Vec)   |     40%        |      47%       |    40%     |       70%    |
 
-#### Micro F1 Score for Top 100 diseases for all 3 models for different weighted means
+#### 5.1.5 Macro F1 Score for Top 100 diseases for all 3 models for different weighted means
 ![img.png](.images/100_macro_F1_perf.png)
 
-#### Micro AUC Score for Top 100 diseases for all 3 models for different weighted means
+#### 5.1.6 Macro AUC Score for Top 100 diseases for all 3 models for different weighted means
 
 ![img.png](.images/100_macro_auc_perf.png)
 
