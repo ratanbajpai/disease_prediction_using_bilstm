@@ -80,6 +80,12 @@ Here we will prepare the input dataset(X, Y) which will be used for training a N
 - Output : icd9_dict_{RUN_TAG}.json - Contains ICD9 Codes of TOP N Diagnoses
 - Output : symptoms_dict{RUN_TAG}.json - Symptoms Dictionary with count of each symptom
 
+#### Symptom count by discharge summary
+![img.png](.images/symptom_count_by_hadm.png)
+
+#### Diagnoses count by discharge summary
+![img.png](.images/diagnoses_per_admission.png)
+
 ### 3.3 TF-IDF Weights Calculation - 03_tf_idf_weights_calculation
 
 Here we will calculate TF-IDF weights for symptoms as described in the paper. Symptom vector S<sub>i</sub> is as follows:
@@ -96,6 +102,13 @@ Where N is the number of all diseases we take in consideration, D<sub>i</sub> is
 - Input : symptom_disease_dict_{RUN_TAG}.json - Contains HADM_ID to Symptom text and Diagnosis mapping as json object
 - Input : icd9_dict_{RUN_TAG}.json - Contains ICD9 Codes of TOP N Diagnoses
 - Output : weight_i_j_norm{tag}.csv - TF-IDF weights for symptom representation
+
+#### Count of diagnoses each symptom associates with
+![img.png](.images/symptom_association_with_diagnoses.png)
+
+#### Count of symptom each disease associates with
+![img.png](.images/symptom_count_associated_to_diagnoses.png)
+
 
 ### 3.4 Training of Word2Vec model - 04_word2vec_symptoms_embeddings
 
