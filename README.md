@@ -140,9 +140,9 @@ models folders contains following pre-trained models:
 
 | Model name         | Mi-Precision  | Mi-Recall | Mi-F1 | Mi-AUC
 | ------------------ |---------------- | -------------- |---------------|--------------|
-| BiLSTM + SymVec (TF-IDF)   |     41%        |      57%       |    47%     |       75%    |
-| BiLSTM + SymVec (Word2Vec)   |     46%        |      60%       |    52%     |       77%    |
-| BiLSTM + SymVec (TF-IDF + Word2Vec)   |     46%        |      61%       |    53%     |       78%    |
+| BiLSTM + SymVec (TF-IDF)   |     0.410   |   0.570    |   0.477   |   0.749   |
+| BiLSTM + SymVec (Word2Vec)   |     0.458   |   0.604    |   0.521   |   0.771   |
+| BiLSTM + SymVec (TF-IDF + Word2Vec)   |    0.455   |   0.613    |   0.522   |   0.774   |
 
 #### 5.1.2 Micro F1 Score for Top 100 diseases for all 3 models for different weighted means
 ![img.png](.images/100_micro_F1_perf.png)
@@ -155,9 +155,9 @@ models folders contains following pre-trained models:
 
 | Model name         | Ma-Precision  | Ma-Recall | Ma-F1 | Ma-AUC
 | ------------------ |---------------- | -------------- |---------------|--------------|
-| BiLSTM + SymVec (TF-IDF)   |     36%        |      44%       |    36%     |       68%    |
-| BiLSTM + SymVec (Word2Vec)   |     37%        |      46%       |    39%     |       70%    |
-| BiLSTM + SymVec (TF-IDF + Word2Vec)   |     40%        |      47%       |    40%     |       70%    |
+| BiLSTM + SymVec (TF-IDF)   |     0.370   |   0.439    |   0.367   |   0.679   |
+| BiLSTM + SymVec (Word2Vec)   |    0.395   |   0.464    |   0.393   |   0.698   |
+| BiLSTM + SymVec (TF-IDF + Word2Vec)   |    0.409   |   0.471    |   0.400   |   0.700   |
 
 #### 5.1.5 Macro F1 Score for Top 100 diseases for all 3 models for different weighted means
 ![img.png](.images/100_macro_F1_perf.png)
@@ -166,6 +166,60 @@ models folders contains following pre-trained models:
 
 ![img.png](.images/100_macro_auc_perf.png)
 
+### 5.2 Top 50 Disease classification
+
+#### 5.2.1 Performance of different models for 50 most-common diseases (micro average)
+
+| Model name         | Mi-Precision  | Mi-Recall | Mi-F1 | Mi-AUC
+| ------------------ |---------------- | -------------- |---------------|--------------|
+| BiLSTM + SymVec (TF-IDF)   |     0.391        |      0.602       |    0.474     |       0.732    |
+| BiLSTM + SymVec (Word2Vec)   |     0.457        |      0.671      |    0.544     |       0.777    |
+| BiLSTM + SymVec (TF-IDF + Word2Vec)   |     0.459       |      0.686       |    0.550    |       0.783    |
+
+#### 5.2.2 Micro F1 Score for Top 50 diseases for all 3 models for different weighted means
+![img.png](.images/50_disease_f1_micro.png)
+
+#### 5.2.3 Micro AUC Score for Top 50 diseases for all 3 models for different weighted means
+![img.png](.images/50_micro_auc_perf.png)
+
+#### 5.2.4 Performance of different models for 50 most-common diseases (macro average)
+
+| Model name         | Ma-Precision  | Ma-Recall | Ma-F1 | Ma-AUC
+| ------------------ |---------------- | -------------- |---------------|--------------|
+| BiLSTM + SymVec (TF-IDF)   |     0.353        |      0.481       |    0.390     |       0.664    |
+| BiLSTM + SymVec (Word2Vec)   |     0.415        |      0.569       |    0.471     |       0.721    |
+| BiLSTM + SymVec (TF-IDF + Word2Vec)   |     0.425        |      0.577       |    0.476     |       0.723    |
+
+#### 5.2.5 Macro F1 Score for Top 50 diseases for all 3 models for different weighted means
+![img.png](.images/50_macro_f1_perf.png)
+
+#### 5.2.6 Macro AUC Score for Top 50 diseases for all 3 models for different weighted means
+![img.png](.images/50_macro_auc_perf.png)
+
+
+### 5.3 Ablation - using LSTM instead of BiLSTM - Top 100 Disease classification
+
+#### 5.3.1 Ablation - Performance of different models for 100 most-common diseases (micro average)
+
+| Model name         | Mi-Precision  | Mi-Recall | Mi-F1 | Mi-AUC
+| ------------------ |---------------- | -------------- |---------------|--------------|
+| BiLSTM + SymVec (TF-IDF)   |     0.40   |   0.50    |   0.44   |   0.72   |
+| BiLSTM + SymVec (Word2Vec)   |    0.43   |   0.59    |   0.49   |   0.76   |
+| BiLSTM + SymVec (TF-IDF + Word2Vec)   |    0.44   |   0.58    |   0.50   |   0.76   |
+
+#### 5.3.2 Ablation - Micro F1 Score for Top 100 diseases for all 3 models for different weighted means
+![img.png](.images/ablation_micro_f1_perf.png)
+
+#### 5.3.3 Ablation - Micro AUC Score for Top 100 diseases for all 3 models for different weighted means
+![img.png](.images/ablation_micro_auc_perf.png)
+
+#### 5.3.4 Ablation - Performance of different models for 100 most-common diseases (macro average)
+
+| Model name         | Ma-Precision  | Ma-Recall | Ma-F1 | Ma-AUC
+| ------------------ |---------------- | -------------- |---------------|--------------|
+| BiLSTM + SymVec (TF-IDF)   |    0.41   |   0.34    |   0.28   |   0.63   |
+| BiLSTM + SymVec (Word2Vec)   |    0.35   |   0.44    |   0.36   |   0.68   |
+| BiLSTM + SymVec (TF-IDF + Word2Vec)   |     0.38   |   0.43    |   0.36   |   0.68   |
 
 ## 6.0 Contributing
 
